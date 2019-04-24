@@ -11,24 +11,29 @@ using namespace std;
 #define avgngrd_HEADER
 class avgngrd {
 	public:
-	double getavg(string b)
+	double get_avg_and_tot(string b,int &tot)
 	{
+		int t = 0;
 			string avg;
-		 int tot=0, x = 0; //"x" to calculate the number of grades for each line
+		 int x (0); //"x" to calculate the number of grades for each line
 		istringstream iss(b);
 		while (!iss.eof()) {
+		
 			getline(iss, avg, ',');//to "cin" the string in the avg without ',' 
-			tot += atoi(avg.c_str());
+			t += atoi(avg.c_str());
 			x++;
 	//this func. "atoi(avg.c_str())" convert the decleration type "string" to old type or int type
 	//its library is <cstdlib>
 		}
-		float average = (float)tot / x;
+		tot = t;
+		float average = (float)t / x;
 		return average;
 	}
-	void getmarks(string c)
+
+
+	void getmarks(const string c)
 	{
-		int x = 0;
+		int x (0);
 		string grd;
 		istringstream iss(c);
 		cout << setw(10);
@@ -40,20 +45,7 @@ class avgngrd {
 		}
 
 	}
-	int gettot(string c)
-	{
-		int tot = 0;
-		string mark;
-		istringstream iss(c);
-		cout << setw(10);
-		while (!iss.eof())
-		{
-			getline(iss, mark, ',');
-			tot += atoi(mark.c_str());
-			
-		}
-		return tot;
-	}
+
 	char getgrade(double c)
 	{
 
@@ -66,6 +58,8 @@ class avgngrd {
 		
 	
 	}
+
+
 	void printstuff()
 	{
 	

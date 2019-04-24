@@ -16,19 +16,20 @@ void main()
 {
 	string dt;
 	int choise;
-	cout << "if you enter num. 1 the program will export the file from the drive"
-		<< "\n but if you wan to enter new list enter num. 0: ";
-	cin >> choise;
 	printtxt print;
 	enterbykeyboard bykeyboard;
-	if (choise == 1)
-		print.func();
-	else if (choise == 0)
-		bykeyboard.by();
-	else
-		cout << "pleas enter either 1 or 0";
+	do {
+		cout << "PS: Enter 0 to exit" << "\nIf you enter '1' the program will export sourse file"
+			<< "\nIf you want to make new list enter '2' : ";
+		cin >> choise;
 
-	cout << endl << "test.txt has been generated." << endl << endl;
+		if (choise == 1) print.func();
+		else if (choise == 2) bykeyboard.by();
+		else if (choise == 0)  exit(0);
+		else cout << "\n\npleas enter either 1 or 2 or 0\n\n\n";
+	} while (choise != 1 || choise != 2 || choise != 0);
+	
+	cout << endl << "The file has been generated in your desktop." << endl << endl;
 	print.getTime(dt);
 	cout << dt << endl;
 	system("pause");

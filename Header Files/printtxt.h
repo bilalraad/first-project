@@ -1,16 +1,19 @@
-#pragma once
 #include<iostream>
 #include"avgngrd.h"
-#include<fstream>
+#pragma warning(disable : 4996)
+#include <ctime>
 using namespace std;
-class enterbykeyboard
-{
-	
-public:
-	enterbykeyboard();
-	void by();
 
-private:
-	ofstream w;
+class printtxt
+{
+public:
+
+	void func();
+	void getTime( string &t);
+private : 
+	avgngrd b;
+	string a;
+	ifstream g;
+	ofstream s;
 };
 
